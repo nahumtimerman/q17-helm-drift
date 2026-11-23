@@ -1,5 +1,5 @@
 name: q17-shared-vpc
-marker: v1
+marker: v2
 staticRoutes:
   - cidr: 10.0.0.0/16
     nextHopIP: 10.255.0.1
