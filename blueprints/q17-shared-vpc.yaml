@@ -1,0 +1,13 @@
+spec_version: 2
+description: Q17 drift test - shared VPC (custom resource) owned by a Helm grain
+grains:
+  shared-vpc:
+    kind: helm
+    spec:
+      source:
+        store: q17-helm-drift
+        path: charts/q17drift
+      agent:
+        name: storage-test
+      target-namespace: q17-drift
+      command-arguments: "--create-namespace"

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: q17drift
+description: Q17 drift test - stands in for a Kube-OVN Vpc owned by a Helm grain
+version: 0.1.0

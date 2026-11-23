@@ -1,0 +1,16 @@
+spec_version: 2
+description: Q17 drift test - shell grain that runs kubectl against the cluster (stands in for the other environments' shell grains)
+inputs:
+  cmd:
+    type: string
+    default: "kubectl get q17drift -o yaml"
+grains:
+  kubectl:
+    kind: shell
+    spec:
+      agent:
+        name: storage-test
+      activities:
+        deploy:
+          commands:
+            - '{{ .inputs.cmd }}'

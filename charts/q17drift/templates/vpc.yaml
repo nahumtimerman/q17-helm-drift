@@ -1,0 +1,11 @@
+apiVersion: test.quali.io/v1
+kind: Q17Drift
+metadata:
+  name: {{ .Values.name }}
+spec:
+  marker: {{ .Values.marker | quote }}
+  staticRoutes:
+  {{- range .Values.staticRoutes }}
+    - cidr: {{ .cidr }}
+      nextHopIP: {{ .nextHopIP }}
+  {{- end }}
