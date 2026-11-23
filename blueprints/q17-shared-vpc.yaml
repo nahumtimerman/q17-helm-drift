@@ -1,5 +1,9 @@
 spec_version: 2
 description: Q17 drift test - shared VPC (custom resource) owned by a Helm grain
+inputs:
+  vpc_name:
+    type: string
+    default: q17-shared-vpc
 grains:
   shared-vpc:
     kind: helm
@@ -11,3 +15,5 @@ grains:
         name: storage-test
       target-namespace: q17-drift
       command-arguments: "--create-namespace"
+      inputs:
+        - name: '{{ .inputs.vpc_name }}'
